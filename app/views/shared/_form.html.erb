@@ -15,13 +15,23 @@
     </div>
 
     <div class="form-group">
-        <%= f.label :author, "Integrantes" %>
-        <%= f.number_field :author, class: 'form-control' %>
+        <%= f.label :author, "Autor" %>
+        <%= f.text_field :author, class: 'form-control' %>
     </div>
 
     <div class="form-group">
         <%= f.label :status, "Estado del libro" %>
         <%= f.select :status, options_for_select(@statuses), class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :loan_date, "Fecha de préstamo" %>
+        <%= f.date_select :loan_date, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :return_date, "Fecha de devolución" %>
+        <%= f.date_select :return_date, class: 'form-control' %>
     </div>
 
     <div class = 'actions'>
