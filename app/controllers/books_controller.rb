@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+    before_action :set_book, only: %i[show edit update destroy]
     before_action :set_selects, only: %i[new edit create update]
     
     def new
@@ -20,25 +21,27 @@ class BooksController < ApplicationController
     end
 
     def show
-        
     end
 
     def edit
-        
     end
 
     def update
-        
     end
 
-    def destroy
-        
+    def destroy   
     end
     
     private
+    
+    def set_book
+        @book = Book.find(params[:id])
+    end
+
     def set_selects
         @statuses = Book.statuses.keys.to_a
     end
+
     def books_params
         params.require(:book).permit(:title, :author, :status, :loan_date, :return_date)
     end

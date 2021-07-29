@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+    <strong>Título</strong>
+    <%= @book.title %>
+</p>
+
+<p>
+    <strong>Autor</strong>
+    <%= @book.author %>
+</p>
+
+<p>
+    <strong>Estado del libro</strong>
+    <%= @book.status %>
+</p>
+
+<p>
+    <strong>Fecha de préstamo</strong>
+    <%= @book.loan_date %>
+</p>
+
+<p>
+    <strong>Fecha de devolución</strong>
+    <%= @book.return_date %>
+</p>
+
+<%= link_to 'Ingresar un nuevo libro', books_new_path %>
