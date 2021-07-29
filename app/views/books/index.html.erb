@@ -1,3 +1,4 @@
+<h1>Mi Biblioteca</h1>
 <p id="notice"><%= notice %></p>
 
 <div class="container">
@@ -22,7 +23,7 @@
             <td><%= book.return_date %></td>
             <td><%= link_to 'Show', book %></td>
             <td><%= link_to 'Edit', edit_book_path(book.id)%></td>
-
+            <td><%= link_to 'Destroy', book, method: :delete, data: {confirm: "Estás seguro que quieres borrar el libro: #{book.title}?"} %></td>
         </tr>
         <% end %>
     </tbody>

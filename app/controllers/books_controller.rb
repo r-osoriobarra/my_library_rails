@@ -38,6 +38,8 @@ class BooksController < ApplicationController
     end
 
     def destroy   
+        @book.destroy
+        redirect_to root_path, notice: 'El libro ha sido eliminado'
     end
     
     private

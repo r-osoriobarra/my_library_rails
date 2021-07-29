@@ -1,5 +1,8 @@
 <p id="notice"><%= notice %></p>
 
+<h1><%= "Libro: #{@book.title}" %></h1>
+
+
 <p>
     <strong>Título</strong>
     <%= @book.title %>
@@ -8,6 +11,11 @@
 <p>
     <strong>Autor</strong>
     <%= @book.author %>
+</p>
+
+<p>
+    <strong>Ingreso #</strong>
+    <%= @book.id %>
 </p>
 
 <p>
@@ -26,3 +34,4 @@
 </p>
 
 <%= link_to 'Ingresar un nuevo libro', books_new_path %>
+<%= link_to 'Ver mi biblioteca', root_path %>
