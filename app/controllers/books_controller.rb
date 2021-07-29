@@ -10,7 +10,7 @@ class BooksController < ApplicationController
         @book = Book.create(books_params)
         respond_to do |format|
             if @book.save
-                format.html {redirect_to @book, notice: "Tu libro se ha ingresado correctamente!"}
+                format.html {redirect_to @book, notice: "Tu libro se ha ingresado con éxito!"}
             else
                 format.html {render :new}
             end
@@ -30,7 +30,7 @@ class BooksController < ApplicationController
     def update
         respond_to do |format|
             if @book.update(books_params)
-                format.html {redirect_to @book, notice: "Tu libro se ha actualizado correctamente!"}
+                format.html {redirect_to @book, notice: "Tu libro se ha actualizado con éxito!"}
             else
                 format.html {render :edit}
             end
@@ -49,6 +49,7 @@ class BooksController < ApplicationController
     end
 
     def set_selects
+        # @statuses = Book.statuses.map {|key, value| [key.titleize, Book.statuses.key(value)]}
         @statuses = Book.statuses.keys.to_a
     end
 
