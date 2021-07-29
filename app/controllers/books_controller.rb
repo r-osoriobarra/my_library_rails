@@ -30,9 +30,9 @@ class BooksController < ApplicationController
     def update
         respond_to do |format|
             if @book.update(books_params)
-                format.html {redirect_to @book, notice: "Tu libro se ha ingresado correctamente!"}
+                format.html {redirect_to @book, notice: "Tu libro se ha actualizado correctamente!"}
             else
-                format.html {render :new}
+                format.html {render :edit}
             end
         end
     end
