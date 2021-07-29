@@ -1,3 +1,3 @@
 class Book < ApplicationRecord
-    enum status: ['Prestado', 'En Estante']
+    enum status: %w[Prestado Estante]
 end
