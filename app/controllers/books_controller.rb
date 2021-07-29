@@ -28,6 +28,13 @@ class BooksController < ApplicationController
     end
 
     def update
+        respond_to do |format|
+            if @book.update(books_params)
+                format.html {redirect_to @book, notice: "Tu libro se ha ingresado correctamente!"}
+            else
+                format.html {render :new}
+            end
+        end
     end
 
     def destroy   
