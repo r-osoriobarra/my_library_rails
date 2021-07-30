@@ -17,7 +17,7 @@ class Book < ApplicationRecord
 
     def valid_dates
         if self.loan_date != nil and self.return_date != nil and self.loan_date > self.return_date
-            self.errors.add :return_date, "The book's return date must be after loan date"
+            self.errors.add :return_date, "must be after loan date"
         end
     end
 end

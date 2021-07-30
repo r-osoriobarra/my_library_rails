@@ -1,1 +1,7 @@
+<div class="container mx-1 pb-2">
+<div class="pt-4">
+    <h1>Edita el libro: <%= @book.title %></h1>
+</div>
 <%= render '/shared/form', book: @book %>
+<%= link_to 'ver Mi biblioteca', root_path, class: 'btn btn-primary mt-4' %>
+</div>

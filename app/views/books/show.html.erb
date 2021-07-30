@@ -1,37 +1,38 @@
-<p id="notice"><%= notice %></p>
+<div class="container mx-1">
+    <h1><%= "Libro: #{@book.title}" %></h1>
+    <p id="notice" class="text-success font-weight-bold"><%= notice %></p>
+    <p>
+        <strong>Título: </strong>
+        <%= @book.title %>
+    </p>
 
-<h1><%= "Libro: #{@book.title}" %></h1>
+    <p>
+        <strong>Autor: </strong>
+        <%= @book.author %>
+    </p>
 
+    <p>
+        <strong>Ingreso #: </strong>
+        <%= @book.id %>
+    </p>
 
-<p>
-    <strong>Título</strong>
-    <%= @book.title %>
-</p>
+    <p>
+        <strong>Estado del libro: </strong>
+        <%= @book.status %>
+    </p>
 
-<p>
-    <strong>Autor</strong>
-    <%= @book.author %>
-</p>
+    <p>
+        <strong>Fecha de préstamo: </strong>
+        <%= @book.loan_date %>
+    </p>
 
-<p>
-    <strong>Ingreso #</strong>
-    <%= @book.id %>
-</p>
+    <p>
+        <strong>Fecha de devolución: </strong>
+        <%= @book.return_date %>
+    </p>
+</div>
 
-<p>
-    <strong>Estado del libro</strong>
-    <%= @book.status %>
-</p>
-
-<p>
-    <strong>Fecha de préstamo</strong>
-    <%= @book.loan_date %>
-</p>
-
-<p>
-    <strong>Fecha de devolución</strong>
-    <%= @book.return_date %>
-</p>
-
-<%= link_to 'Ingresar un nuevo libro', books_new_path %>
-<%= link_to 'Ver mi biblioteca', root_path %>
+<div class="container mx-1">
+    <%= link_to 'Ingresar un nuevo libro', books_new_path, class: 'btn btn-success' %>
+    <%= link_to 'ver Mi biblioteca', root_path, class: 'btn btn-primary' %>
+</div>
