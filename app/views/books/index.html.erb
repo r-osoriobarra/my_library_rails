@@ -1,20 +1,30 @@
-<h1>Mi Biblioteca</h1>
-<p id="notice"><%= notice %></p>
-
-<div class="row">
-    <div class="col-md-3 offset-md-2">
-        <%= search_form_for @q do |f| %>
-            <div class="form-group">
-                <%= f.label :status_eq, "Estado del libro" %>
-                <%= f.select :status_eq, options_for_select(Book.statuses, @q.status_eq), {}, {class:"form-control"} %>
-            </div>
-            <%= f.submit "Buscar", class: "btn btn-primary" %>
-        <% end %>
-    </div>
-</div>
-
 <div class="container">
-    <table class="table">
+    <div class="container text-center pt-5">
+        <h1>Mi Biblioteca</h1>
+        <p id="notice" class="text-danger font-weight-bold"><%= notice %></p>
+    </div>
+    
+    <!--Create a new book -->
+    <section class="row mt-5">
+        <div class="col-md-3">
+            <%= link_to 'Ingresar un nuevo libro', books_new_path, class: 'btn btn-success' %>
+        </div>
+        <!--Search by status-->
+        <div class="col-md-9">
+            <%= search_form_for @q do |f| %>
+                <div class="form-row">
+                <div class="col-md-6">
+                    <%= f.select :status_eq, options_for_select(Book.statuses, @q.status_eq), {}, {class:"form-control"} %>            
+                </div>
+                <div class="col-md-3">
+                    <%= f.submit "Filtrar por estado", class: "btn btn-primary" %>
+                </div>
+            <% end %>
+        </div>
+    </section>
+    
+    <!--Books table-->
+    <table class="table mt-5">
     <thead>
         <tr>
         <th><%= sort_link(@q, :title) %></th>
@@ -40,5 +50,4 @@
         <% end %>
     </tbody>
     </table>
-    <%= link_to 'Ingresar un nuevo libro', books_new_path, class: 'btn btn-success' %>
 </div>

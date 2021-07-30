@@ -10,7 +10,7 @@ class BooksController < ApplicationController
         @book = Book.create(books_params)
         respond_to do |format|
             if @book.save
-                format.html {redirect_to @book, notice: "Tu libro se ha ingresado con éxito!"}
+                format.html {redirect_to @book, notice: "El libro se ha ingresado con éxito!"}
             else
                 format.html {render :new}
             end
@@ -31,7 +31,7 @@ class BooksController < ApplicationController
     def update
         respond_to do |format|
             if @book.update(books_params)
-                format.html {redirect_to @book, notice: "Tu libro se ha actualizado con éxito!"}
+                format.html {redirect_to @book, notice: "El libro se ha actualizado con éxito!"}
             else
                 format.html {render :edit}
             end
@@ -40,7 +40,7 @@ class BooksController < ApplicationController
 
     def destroy   
         @book.destroy
-        redirect_to root_path, notice: 'El libro ha sido eliminado'
+        redirect_to root_path, notice: "El libro: #{@book.title}, ha sido eliminado."
     end
     
     private
