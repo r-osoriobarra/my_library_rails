@@ -3,7 +3,7 @@ class CreateBooks < ActiveRecord::Migration[5.2]
     create_table :books do |t|
       t.string :title
       t.string :author
-      t.string :status
+      t.integer :status
       t.datetime :loan_date
       t.datetime :return_date
 

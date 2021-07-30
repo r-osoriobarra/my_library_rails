@@ -1,5 +1,4 @@
 class Book < ApplicationRecord
-    # enum status: [:prestado, :en_estante]
     enum status: %w[Prestado Estante]
 
     validates :title, :author, :status, presence: true

@@ -50,7 +50,6 @@ class BooksController < ApplicationController
     end
 
     def set_selects
-        # @statuses = Book.statuses.map {|key, value| [key.titleize, Book.statuses.key(value)]}
         @statuses = Book.statuses.keys.to_a
     end
 
