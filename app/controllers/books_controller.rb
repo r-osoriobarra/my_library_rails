@@ -18,7 +18,8 @@ class BooksController < ApplicationController
     end
 
     def index
-        @books = Book.all
+        @q = Book.ransack(params[:q])
+        @books = @q.result(distinct: true)
     end
 
     def show
